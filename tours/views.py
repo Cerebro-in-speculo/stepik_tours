@@ -1,13 +1,20 @@
 from django.shortcuts import render
+from django.views import View
 
 
-def MainView(request):
-    return render(request, 'index.html')
+class MainView(View):
+
+    def get(self, request):
+        return render(request, 'index.html')
 
 
-def DepartureView(request):
-    return render(request, 'departure.html')
+class DepartureView(View):
+
+    def get(self, request, departure):
+        return render(request, 'departure.html')
 
 
-def TourView(request):
-    return render(request, 'tour.html')
+class TourView(View):
+
+    def get(self, request, id):
+        return render(request, 'tour.html')
